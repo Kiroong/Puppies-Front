@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { IndexComponent } from './index/index.component';
+import { PuppySummaryComponent } from './puppy-summary/puppy-summary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
-    IndexComponent
+    IndexComponent,
+    PuppySummaryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-index',
@@ -7,9 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  @Input() authToken: string;
+
+  backendUrl = environment.backendUrl;
+
+  puppyIds: string[]
+
+  constructor(
+    private http: HttpClient,
+  ) { }
+
+  request(path: string, args: any) {
+    return this.http.post(this.backendUrl + path, {
+      token: this.authToken,
+      ...args
+    });
+  }
+
+  refresh() {
+    this.request('puppies/list', {}).subscribe((puppyIds: string[]) => {
+      this.puppyIds = puppyIds;
+    });
+  }
 
   ngOnInit() {
+    this.refresh();
+  }
+
+  onCreatePuppy() {
+    this.request('puppies/create', {}).subscribe(() => this.refresh());
   }
 
 }

@@ -1,2 +1,2 @@
 <app-sign-in *ngIf="!authToken" [(token)]="authToken"></app-sign-in>
-<app-index *ngIf="authToken"></app-index>
+<app-index *ngIf="authToken" [authToken]="authToken"></app-index>

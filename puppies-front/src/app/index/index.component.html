@@ -1,3 +1,5 @@
-<p>
-  index works!
-</p>
+<ng-container *ngIf="puppyIds">
+  <h1>Puppies List</h1>
+  <app-puppy-summary *ngFor="let puppyId of puppyIds" [puppyId]="puppyId" [request]="request.bind(this)" [refresh]="refresh.bind(this)"></app-puppy-summary>
+</ng-container>
+<button (click)="onCreatePuppy()">새로운 강아지 만들기</button>
