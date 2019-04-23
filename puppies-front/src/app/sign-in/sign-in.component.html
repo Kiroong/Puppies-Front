@@ -3,13 +3,15 @@
     <h1>Welcome to Puppies!</h1>
   </div>
   <div class="row">
-    <form class="form">
+    <form class="form" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="inputID">ID</label>
-        <input type="text" id="inputID" class="form-control mx-sm-3">
+        <input type="text" [(ngModel)]="signInFormData.id" name="id" id="inputID" class="form-control mx-sm-3">
         <label for="inputPassword">Password</label>
-        <input type="password" id="inputPassword" class="form-control mx-sm-3">
+        <input type="password" [(ngModel)]="signInFormData.pw" name="pw" id="inputPassword" class="form-control mx-sm-3">
+        <input type="submit">
       </div>
+      <p class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
     </form>
   </div>
   <div class="row">
