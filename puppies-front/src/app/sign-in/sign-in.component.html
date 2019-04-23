@@ -9,7 +9,7 @@
         <input type="text" [(ngModel)]="signInFormData.id" name="id" id="inputID" class="form-control mx-sm-3">
         <label for="inputPassword">Password</label>
         <input type="password" [(ngModel)]="signInFormData.pw" name="pw" id="inputPassword" class="form-control mx-sm-3">
-        <input type="submit">
+        <input type="submit" class="my-2" value="Sign In">
       </div>
       <p class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
     </form>
