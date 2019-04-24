@@ -1,5 +1,25 @@
-<ng-container *ngIf="puppyIds">
-  <h1>Puppies List</h1>
-  <app-puppy-summary *ngFor="let puppyId of puppyIds" [puppyId]="puppyId" [request]="request.bind(this)" [refresh]="refresh.bind(this)"></app-puppy-summary>
-</ng-container>
-<button (click)="onCreatePuppy()">새로운 강아지 만들기</button>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Puppies List</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <ng-container *ngIf="puppyIds">
+          <app-puppy-summary
+            *ngFor="let puppyId of puppyIds"
+            (click)="puppyIdToEdit = puppyId"
+            [puppyId]="puppyId" [request]="request.bind(this)"
+            [refresh]="refresh.bind(this)"
+          ></app-puppy-summary>
+      </ng-container>
+      <button (click)="onCreatePuppy()">새로운 강아지 만들기</button>
+    </div>
+    <div class="col-md-4">
+      <ng-container *ngIf="puppyIdToEdit">
+        <app-puppy-edit [puppyId]="puppyIdToEdit" [request]="request.bind(this)" [refresh]="refresh.bind(this)"></app-puppy-edit>
+      </ng-container>
+    </div>
+  </div>
+</div>

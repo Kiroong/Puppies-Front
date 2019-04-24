@@ -22,10 +22,4 @@ export class PuppySummaryComponent implements OnInit {
     });
   }
 
-  onDelete() {
-    this.request('puppies/delete', { puppyId: this.puppyId }).subscribe(() => {
-      this.refresh();
-    });
-  }
-
 }

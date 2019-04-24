@@ -1,0 +1,9 @@
+<ng-container *ngIf="puppy">
+  <div class="card p-2">
+    <label for="puppyName">이름</label>
+    <input id="puppyName" [(ngModel)]="puppy.name">
+    <label for="puppyKey">접근키</label>
+    <input id="puppyKey" [(ngModel)]="puppy.accessKey">
+    <button class="btn btn-dark" (click)="onIssueAccessKey()">접근키 (재)발급</button>
+  </div>
+</ng-container>

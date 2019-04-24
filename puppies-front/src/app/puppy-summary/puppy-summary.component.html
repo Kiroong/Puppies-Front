@@ -1,10 +1,5 @@
-<div class="card" *ngIf="puppy">
+<div class="card p-2" *ngIf="puppy">
   <h5 class="card-title">{{ puppy.name }}</h5>
   <p>{{ puppy.accessKey }}</p>
-  <ul>
-    <li *ngFor="let user of puppy.users">
-      {{user.id}}: {{user.passwordHashed}}
-    </li>
-  </ul>
-  <button (click)="onDelete()">이 강아지 삭제</button>
+  <p>{{ puppy.users.length }}명의 사용자</p>
 </div>

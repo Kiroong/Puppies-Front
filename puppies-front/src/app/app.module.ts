@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { IndexComponent } from './index/index.component';
 import { PuppySummaryComponent } from './puppy-summary/puppy-summary.component';
+import { PuppyEditComponent } from './puppy-edit/puppy-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     IndexComponent,
-    PuppySummaryComponent
+    PuppySummaryComponent,
+    PuppyEditComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,8 @@ export class IndexComponent implements OnInit {
 
   backendUrl = environment.backendUrl;
 
-  puppyIds: string[]
+  puppyIds: string[];
+  puppyIdToEdit: number;
 
   constructor(
     private http: HttpClient,
